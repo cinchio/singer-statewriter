@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="singer-statewriter",
-    version="0.1.0",
+    version="0.1.1",
     description="A simple script to capture Singer.io state messages and write them to a state file.",
     author="Cinch",
     url="https://github.com/cinchio/singer-statewriter",

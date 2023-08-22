@@ -11,11 +11,14 @@ def main():
 
     input_messages = io.TextIOWrapper(sys.stdin.buffer, encoding='utf-8')
     for message in input_messages:
-        message = json.loads(message)
+        try:
+            message = json.loads(message)
 
-        if message['type'] == 'STATE':
-            with open(args.state, 'w') as f:
-                json.dump(message['value'], f, indent=2)
+            if message['type'] == 'STATE':
+                with open(args.state, 'w') as f:
+                    json.dump(message['value'], f, indent=2)
+        except:
+            pass
 
 if __name__ == "__main__":
     main()
